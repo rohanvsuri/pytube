@@ -138,3 +138,6 @@ test/**/*.xml
 # Common virtual environments
 venv/
 env/
+
+test.py
+
