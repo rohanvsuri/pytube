@@ -17,8 +17,8 @@ Ping @ronncc if you would like to help out
   </p>
 </div>
 
-# pytube
-*pytube* is a very serious, lightweight, dependency-free Python library (and command-line utility) for downloading YouTube Videos.
+# Call for Successor
+Hello, I am unable to maintain and contribute to this project much these days. If you would like to it become the successor, please email me at nficano(at)gmail.com.
 
 ## Installation
 
@@ -250,3 +250,72 @@ $ pytube http://youtube.com/watch?v=2lAe1cqCOXo --list
 ```
 
 Finally, if you're filing a bug report, the cli contains a switch called ``--build-playback-report``, which bundles up the state, allowing others to easily replay your issue.
+
+```
+usage: pytube3 [-h] [--version] [--itag ITAG] [-r RESOLUTION] [-l] [-v]
+               [--build-playback-report] [-c [CAPTION_CODE]] [-t TARGET]
+               [-a [AUDIO]] [-f [FFMPEG]]
+               [url]
+
+Command line application to download youtube videos.
+
+positional arguments:
+  url                   The YouTube /watch or /playlist url
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  --itag ITAG           The itag for the desired stream
+  -r RESOLUTION, --resolution RESOLUTION
+                        The resolution for the desired stream
+  -l, --list            The list option causes pytube cli to return a list of
+                        streams available to download
+  -v, --verbose         Verbosity level, use up to 4 to increase logging -vvvv
+  --build-playback-report
+                        Save the html and js to disk
+  -c [CAPTION_CODE], --caption-code [CAPTION_CODE]
+                        Download srt captions for given language code. Prints
+                        available language codes if no argument given
+  -t TARGET, --target TARGET
+                        The output directory for the downloaded stream.
+                        Default is current working directory
+  -a [AUDIO], --audio [AUDIO]
+                        Download the audio for a given URL at the highest
+                        bitrate availableDefaults to mp4 format if none is
+                        specified
+  -f [FFMPEG], --ffmpeg [FFMPEG]
+                        Downloads the audio and video stream for resolution
+                        providedIf no resolution is provided, downloads the
+                        best resolutionRuns the command line program ffmpeg to
+                        combine the audio and video
+```
+
+
+## Development
+
+<a href="https://deepsource.io/gh/hbmartin/pytube3/?ref=repository-badge" target="_blank"><img alt="DeepSource" title="DeepSource" src="https://static.deepsource.io/deepsource-badge-light-mini.svg"></a>
+<a href="https://www.codacy.com/manual/hbmartin/pytube3?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=hbmartin/pytube3&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/53794f06983a46829620b3284c6a5596"/></a>
+<a href="https://github.com/ambv/black"><img src="https://img.shields.io/badge/code%20style-black-000000.svg" /></a>
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+To run code checking before a PR use ``make test``
+
+#### Virtual environment
+
+Virtual environment is setup with [pipenv](https://pipenv-fork.readthedocs.io/en/latest/) and can be automatically activated with [direnv](https://direnv.net/docs/installation.html)
+
+#### Code Formatting
+
+This project is linted with [pyflakes](https://github.com/PyCQA/pyflakes), formatted with [black](https://github.com/ambv/black), and typed with [mypy](https://mypy.readthedocs.io/en/latest/introduction.html)
+
+
+#### Code of Conduct
+
+Treat other people with helpfulness, gratitude, and consideration! See the [Python Community Code of Conduct](https://www.python.org/psf/codeofconduct/).
+
+## GUIs and other libraries
+* [YouTubeDownload](https://github.com/YouTubeDownload/YouTubeDownload) - Featured GUI frontend for pytube3
+* [Pytube-GUI](https://github.com/GAO23/Pytube-GUI) - Simple GUI frontend for pytube3
+* [StackOverflow questions](https://stackoverflow.com/questions/tagged/pytube)
+* [PySlackers](https://pyslackers.com/web) - Python Slack group
