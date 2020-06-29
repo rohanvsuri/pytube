@@ -98,6 +98,7 @@ _3D = [82, 83, 84, 85, 100, 101, 102]
 LIVE = [91, 92, 93, 94, 95, 96, 132, 151]
 DASH_MP4_VIDEO = [133, 134, 135, 136, 137, 138, 160, 212, 264, 266, 298, 299]
 DASH_MP4_AUDIO = [139, 140, 141, 256, 258, 325, 328]
+MP4 = [18, 22, 133, 134, 135, 136, 137, 138, 139, 140, 141, 160, 212, 256, 258, 264, 266, 298, 299, 325, 328, 394, 395, 396, 397, 398]
 DASH_WEBM_VIDEO = [
     167,
     168,
@@ -146,4 +147,7 @@ def get_format_profile(itag: int) -> Dict:
         or itag in DASH_MP4_AUDIO
         or itag in DASH_WEBM_VIDEO
         or itag in DASH_WEBM_AUDIO,
+        "is_mp4_audio": itag in DASH_MP4_AUDIO,
+        "is_mp4_video": itag in DASH_MP4_VIDEO,
+        "is_mp4": itag in MP4
     }

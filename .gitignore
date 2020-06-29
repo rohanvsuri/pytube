@@ -131,6 +131,7 @@ test/**/*.xml
 .idea/tasks.xml
 .idea/modules.xml
 .idea/*.iml
+/test.py
 
 # Additional IDE files
 *.sublime-project
