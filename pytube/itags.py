@@ -119,6 +119,36 @@ ITAGS = {
 HDR = [330, 331, 332, 333, 334, 335, 336, 337]
 _3D = [82, 83, 84, 85, 100, 101, 102]
 LIVE = [91, 92, 93, 94, 95, 96, 132, 151]
+<<<<<<< 4e12eb54d1ee72e41e9a7e53a3d708e300ccf661
+=======
+DASH_MP4_VIDEO = [133, 134, 135, 136, 137, 138, 160, 212, 264, 266, 298, 299]
+DASH_MP4_AUDIO = [139, 140, 141, 256, 258, 325, 328]
+MP4 = [18, 22, 133, 134, 135, 136, 137, 138, 139, 140, 141, 160, 212, 256, 258, 264, 266, 298, 299, 325, 328, 394, 395, 396, 397, 398]
+DASH_WEBM_VIDEO = [
+    167,
+    168,
+    169,
+    170,
+    218,
+    219,
+    278,
+    242,
+    243,
+    244,
+    245,
+    246,
+    247,
+    248,
+    271,
+    272,
+    302,
+    303,
+    308,
+    313,
+    315,
+]
+DASH_WEBM_AUDIO = [171, 172, 249, 250, 251]
+>>>>>>> HEAD~4
 
 
 def get_format_profile(itag: int) -> Dict:
@@ -139,7 +169,15 @@ def get_format_profile(itag: int) -> Dict:
         "is_3d": itag in _3D,
         "is_hdr": itag in HDR,
         "is_dash": (
-            itag in DASH_AUDIO
+            itag in DASH_AUDIOp
             or itag in DASH_VIDEO
         ),
+        "fps": 60 if itag in _60FPS else 30,
+        "is_dash": itag in DASH_MP4_VIDEO
+        or itag in DASH_MP4_AUDIO
+        or itag in DASH_WEBM_VIDEO
+        or itag in DASH_WEBM_AUDIO,
+        "is_mp4_audio": itag in DASH_MP4_AUDIO,
+        "is_mp4_video": itag in DASH_MP4_VIDEO,
+        "is_mp4": itag in MP4
     }

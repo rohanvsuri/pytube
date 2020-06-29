@@ -91,7 +91,7 @@ class YouTube:
 
         self.watch_url = f"https://youtube.com/watch?v={self.video_id}"
         self.embed_url = f"https://www.youtube.com/embed/{self.video_id}"
-
+        self.itag_list: List[int] = []
         # Shared between all instances of `Stream` (Borg pattern).
         self.stream_monostate = Monostate(
             on_progress=on_progress_callback, on_complete=on_complete_callback
@@ -251,6 +251,9 @@ class YouTube:
                 monostate=self.stream_monostate,
             )
             self.fmt_streams.append(video)
+            self.itag_list.append(int(stream['itag']))
+    def get_itag_list(self):
+        return self.itag_list
 
     @property
     def caption_tracks(self) -> List[Caption]:
