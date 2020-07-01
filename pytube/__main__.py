@@ -17,6 +17,8 @@ from typing import Optional
 from urllib.parse import parse_qsl
 
 import pytube
+from html import unescape
+import os, ssl
 from pytube import Caption
 from pytube import CaptionQuery
 from pytube import extract
@@ -199,6 +201,9 @@ class YouTube:
 
         :rtype: None
         """
+        if (not os.environ.get('PYTHONHTTPSVERIFY', '') and getattr(ssl, '_create_unverified_context', None)):
+            ssl._create_default_https_context = ssl._create_unverified_context
+
         self.watch_html = request.get(url=self.watch_url)
         self.check_availability()
         self.age_restricted = extract.is_age_restricted(self.watch_html)
