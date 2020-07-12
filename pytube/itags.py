@@ -179,5 +179,5 @@ def get_format_profile(itag: int) -> Dict:
         or itag in DASH_WEBM_AUDIO,
         "is_mp4_audio": itag in DASH_MP4_AUDIO,
         "is_mp4_video": itag in DASH_MP4_VIDEO,
-        "is_mp4": itag in MP4
+        "file_type": "mp4" if itag in MP4 else "webm"
     }
