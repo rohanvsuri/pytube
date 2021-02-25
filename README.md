@@ -19,11 +19,8 @@
   </p>
 </div>
 
-<<<<<<< 4e12eb54d1ee72e41e9a7e53a3d708e300ccf661
-=======
 # Call for Successor
 Hello, I am unable to maintain and contribute to this project much these days. If you would like to it become the successor, please email me at nficano(at)gmail.com.
->>>>>>> Update README.md
 
 ### Actively soliciting contributers!
 Have ideas for how pytube can be improved? Feel free to open an issue or a pull
@@ -118,8 +115,6 @@ You can also do the same for a playlist:
 ```bash
 $ pytube https://www.youtube.com/playlist?list=PLS1QulWo1RIaJECMeUT4LFwJ-ghgoSH6n
 ```
-<<<<<<< 4e12eb54d1ee72e41e9a7e53a3d708e300ccf661
-=======
 
 Finally, if you're filing a bug report, the cli contains a switch called ``--build-playback-report``, which bundles up the state, allowing others to easily replay your issue.
 
@@ -191,4 +186,3 @@ Treat other people with helpfulness, gratitude, and consideration! See the [Pyth
 * [Pytube-GUI](https://github.com/GAO23/Pytube-GUI) - Simple GUI frontend for pytube3
 * [StackOverflow questions](https://stackoverflow.com/questions/tagged/pytube)
 * [PySlackers](https://pyslackers.com/web) - Python Slack group
->>>>>>> Update README.md
