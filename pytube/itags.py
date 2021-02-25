@@ -166,15 +166,16 @@ def get_format_profile(itag: int) -> Dict:
         "is_3d": itag in _3D,
         "is_hdr": itag in HDR,
         "is_dash": (
-            itag in DASH_AUDIOp
+            itag in DASH_AUDIO
             or itag in DASH_VIDEO
         ),
-        "fps": 60 if itag in _60FPS else 30,
+        # "fps": 60 if itag in _60FPS else 30,
         "is_dash": itag in DASH_MP4_VIDEO
         or itag in DASH_MP4_AUDIO
         or itag in DASH_WEBM_VIDEO
         or itag in DASH_WEBM_AUDIO,
         "is_mp4_audio": itag in DASH_MP4_AUDIO,
         "is_mp4_video": itag in DASH_MP4_VIDEO,
-        "is_mp4": itag in MP4
+        "is_mp4": itag in MP4,
+        "file_type": "mp4" if itag in MP4 else "webm"
     }
